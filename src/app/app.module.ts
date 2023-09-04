@@ -10,13 +10,17 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { RegisterComponent } from './+pages/login/register/register.component';
+import {MatIconModule} from '@angular/material/icon';
+import { HomeComponent } from './+pages/login/home/home.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,10 @@ import { RegisterComponent } from './+pages/login/register/register.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

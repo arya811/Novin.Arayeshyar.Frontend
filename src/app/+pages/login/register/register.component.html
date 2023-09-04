@@ -1,1 +1,24 @@
-<p>register works!</p>
+<button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+       <mat-icon>menu</mat-icon>
+     </button>
+     <button [routerLink]="'/home'" mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+       <mat-icon>home</mat-icon>
+</button>
+<button [routerLink]="'/login'" mat-stroked-button color="accent" class="login">ورود</button>
+<form [formGroup]="registerForm" class="login-form">
+    <mat-form-field class="login-full-width">
+      <mat-label>شماره موبایل</mat-label>
+      <input type="text" matInput formControlName="mobile" [errorStateMatcher]="matcher"
+             placeholder="مثال: 09xxxxxxxx">
+      <mat-hint>شماره همراه خود را وارد کنید</mat-hint>
+       </mat-form-field>
+    <mat-form-field class="login-full-width">
+      <mat-label>نام و نام خانوادگی</mat-label>
+      <input type="text" matInput formControlName="title"
+             placeholder="مثال: آریا محمدی">
+      <mat-hint>نام و نام خانوادگی خود را وارد کنید</mat-hint>
+    </mat-form-field>
+    <button [routerLink]="'/register'" mat-raised-button color="accent" >ثبت نام</button>
+</form>
+  
+
