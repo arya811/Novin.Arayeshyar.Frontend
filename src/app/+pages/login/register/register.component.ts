@@ -17,11 +17,26 @@ import { ErrorStateMatcher } from '@angular/material/core';
 export class RegisterComponent {
   constructor(private fb: FormBuilder) {}
   registerForm = this.fb.group({
-    type: ['', Validators.required],
-    mobile: ['', Validators.required],
+    mobile: [
+      '',
+      [
+        Validators.required,
+        Validators.maxLength(11),
+        Validators.pattern(/^09\d{9}$/),
+      ],
+    ],
+    password: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(8),
+      ],
+    ],
     title: ['', Validators.required],
+    
   });
   matcher = new MyErrorStateMatcher();
+  hide = true;
 }
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {

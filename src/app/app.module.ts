@@ -13,6 +13,7 @@ import { RegisterComponent } from './+pages/login/register/register.component';
 import {MatIconModule} from '@angular/material/icon';
 import { HomeComponent } from './+pages/login/home/home.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import {MatCardModule} from '@angular/material/card';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +32,8 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatRadioModule
     
   ],
   providers: [],
