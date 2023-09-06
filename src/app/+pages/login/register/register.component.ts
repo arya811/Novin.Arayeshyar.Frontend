@@ -25,15 +25,8 @@ export class RegisterComponent {
         Validators.pattern(/^09\d{9}$/),
       ],
     ],
-    password: [
-      '',
-      [
-        Validators.required,
-        Validators.minLength(8),
-      ],
-    ],
-    title: ['', Validators.required],
-    
+    password: ['', [Validators.required, Validators.minLength(8)]],
+    title: ['', [Validators.required,Validators.minLength(3)]],
   });
   matcher = new MyErrorStateMatcher();
   hide = true;

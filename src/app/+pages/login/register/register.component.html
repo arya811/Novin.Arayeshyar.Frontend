@@ -18,17 +18,18 @@
 </button>
 <mat-card class="example-card">
   <form [formGroup]="registerForm" class="login-form">
-         <mat-form-field class="login-full-width">
-           <mat-label>نام و نام خانوادگی</mat-label>
-           <input
-             type="text"
-             matInput
-             formControlName="title"
-             placeholder="مثال: آریا محمدی"
-           />
-           <mat-hint>نام و نام خانوادگی خود را وارد کنید</mat-hint>
-         </mat-form-field>
-         <mat-form-field class="login-full-width">
+    <mat-form-field class="login-full-width">
+      <mat-label>نام و نام خانوادگی</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="title"
+        [errorStateMatcher]="matcher"
+        placeholder="مثال: آریا محمدی"
+      />
+      <mat-hint>نام و نام خانوادگی خود را وارد کنید</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="login-full-width">
       <mat-label>شماره موبایل</mat-label>
       <input
         type="text"
@@ -40,33 +41,40 @@
       <mat-hint>شماره همراه خود را وارد کنید</mat-hint>
     </mat-form-field>
     <mat-form-field class="password">
-       <mat-label>رمز عبور</mat-label>
-       <input
-       matInput
-       formControlName="password"
-       [type]="hide ? 'password' : 'text'"
-       [errorStateMatcher]="matcher"
-       />
-       <mat-hint>رمز عبور خود را وارد کنید</mat-hint>
-       <button
-       mat-icon-button
-       matSuffix
-       (click)="hide = !hide"
-       [attr.aria-label]="'Hide password'"
-       [attr.aria-pressed]="hide"
-       >
-       <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-</button>
-</mat-form-field>
-<td><mat-form-field *ngIf="" class="name">
-    <mat-label>نام آرایشگاه</mat-label>
-    <input matInput>
-  </mat-form-field></td>
+      <mat-label>رمز عبور</mat-label>
+      <input
+        matInput
+        formControlName="password"
+        [type]="hide ? 'password' : 'text'"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-hint>رمز عبور خود را وارد کنید</mat-hint>
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <td>
+      <mat-form-field class="name">
+        <mat-label>نام آرایشگاه</mat-label>
+        <input matInput />
+      </mat-form-field>
+    </td>
     <mat-radio-group aria-label="Select an option">
-         <mat-radio-button value="1">کاربر</mat-radio-button>
-         <mat-radio-button value="2">آرایشگاه دار</mat-radio-button>
-       </mat-radio-group>
-    <button [routerLink]="'/register'" mat-raised-button color="warn" class="button">
+      <mat-radio-button value="1">کاربر</mat-radio-button>
+      <mat-radio-button value="2">آرایشگاه دار</mat-radio-button>
+    </mat-radio-group>
+    <button
+      [routerLink]="'/register'"
+      mat-raised-button
+      color="warn"
+      class="button"
+    >
       ثبت نام
     </button>
   </form>
