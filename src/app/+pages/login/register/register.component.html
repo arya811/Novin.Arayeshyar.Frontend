@@ -17,6 +17,7 @@
   ورود
 </button>
 <mat-card class="example-card">
+  <p class="names">Arayeshyar</p>
   <form [formGroup]="registerForm" class="login-form">
     <mat-form-field class="login-full-width">
       <mat-label>نام و نام خانوادگی</mat-label>
@@ -62,7 +63,7 @@
     <td>
       <mat-form-field class="name">
         <mat-label>نام آرایشگاه</mat-label>
-        <input matInput />
+        <input formControlName="shoptitle" matInput />
       </mat-form-field>
     </td>
     <mat-radio-group aria-label="Select an option">
