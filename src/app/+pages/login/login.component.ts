@@ -24,7 +24,14 @@ export class LoginComponent {
         Validators.pattern(/^09\d{9}$/),
       ],
     ],
-    password: ['', [Validators.required, Validators.minLength(8)]],
+    password: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*d).+'),
+      ],
+    ],
   });
   matcher = new MyErrorStateMatcher();
   show() {
