@@ -33,7 +33,7 @@ export class RegisterComponent {
         Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*d).+'),
       ],
     ],
-    title: ['', [Validators.required, Validators.minLength(3)]],
+    title: ['', [Validators.required, Validators.pattern('[آ-ی]+'),Validators.minLength(4)]],
     shoptitle: ['', [Validators.required]],
   });
   matcher = new MyErrorStateMatcher();
