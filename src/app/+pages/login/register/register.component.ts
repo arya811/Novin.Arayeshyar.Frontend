@@ -35,9 +35,12 @@ export class RegisterComponent {
     ],
     title: ['', [Validators.required, Validators.pattern('[آ-ی]+'),Validators.minLength(4)]],
     shoptitle: ['', [Validators.required]],
+    
   });
   matcher = new MyErrorStateMatcher();
   hide = true;
+  before = false;
+  after = false;
 }
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {

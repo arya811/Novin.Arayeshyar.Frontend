@@ -41,6 +41,9 @@
         placeholder="مثال: 09xxxxxxxx"
       />
       <mat-hint>شماره موبایل خود را وارد کنید</mat-hint>
+      <mat-error *ngIf="loginForm.controls.mobile.hasError('required')">
+        این قسمت اجباری می باشد
+       </mat-error>
     </mat-form-field>
     <mat-form-field class="password">
       <mat-label>رمز عبور</mat-label>
@@ -52,6 +55,9 @@
         placeholder="شامل حرف بزرگ و کوچک"
       />
       <mat-hint>رمز عبور خود را وارد کنید</mat-hint>
+      <mat-error *ngIf="loginForm.controls.mobile.hasError('required')">
+        این قسمت اجباری می باشد
+       </mat-error>
       <button
         mat-icon-button
         matSuffix

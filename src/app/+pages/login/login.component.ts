@@ -38,11 +38,6 @@ export class LoginComponent {
     console.log(this.loginForm.value);
   }
   hide = true;
-//   nameKeyPress(k: KeyboardEvent) {
-//     if (!(k.key >= 'آ' && k.key >= '')) {
-//       k.preventDefault();
-//     }
-//   }
 }
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {

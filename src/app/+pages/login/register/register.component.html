@@ -29,6 +29,9 @@
         placeholder="مثال: آریا محمدی"
       />
       <mat-hint>نام و نام خانوادگی خود را وارد کنید</mat-hint>
+      <mat-error *ngIf="registerForm.controls.title.hasError('required')">
+       این قسمت اجباری می باشد
+      </mat-error>
     </mat-form-field>
     <mat-form-field class="login-full-width">
       <mat-label>شماره موبایل</mat-label>
@@ -40,6 +43,9 @@
         placeholder="مثال: 09xxxxxxxx"
       />
       <mat-hint>شماره همراه خود را وارد کنید</mat-hint>
+      <mat-error *ngIf="registerForm.controls.mobile.hasError('required')">
+        این قسمت اجباری می باشد
+       </mat-error>
     </mat-form-field>
     <mat-form-field class="password">
       <mat-label>رمز عبور</mat-label>
@@ -50,6 +56,9 @@
         [errorStateMatcher]="matcher"
       />
       <mat-hint>رمز عبور خود را وارد کنید</mat-hint>
+      <mat-error *ngIf="registerForm.controls.mobile.hasError('required')">
+        این قسمت اجباری می باشد
+       </mat-error>
       <button
         mat-icon-button
         matSuffix
@@ -61,14 +70,14 @@
       </button>
     </mat-form-field>
     <td>
-      <mat-form-field class="name">
+      <mat-form-field *ngIf="before==true" class="name">
         <mat-label>نام آرایشگاه</mat-label>
         <input formControlName="shoptitle" matInput />
       </mat-form-field>
     </td>
-    <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="1">کاربر</mat-radio-button>
-      <mat-radio-button value="2">آرایشگاه دار</mat-radio-button>
+    <mat-radio-group formControlName="registerForm">
+      <mat-radio-button class="example-margin" value="after">کاربر</mat-radio-button>
+      <mat-radio-button class="example-margin" value="before">آرایشگاه دار</mat-radio-button>
     </mat-radio-group>
     <button
       [routerLink]="'/register'"
