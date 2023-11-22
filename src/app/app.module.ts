@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './+pages/login/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from '@angular/material/radio';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatIconModule,
     MatCardModule,
     MatRadioModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

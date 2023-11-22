@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {
   FormBuilder,
@@ -38,7 +39,13 @@ export class LoginComponent {
     console.log(this.loginForm.value);
   }
   hide = true;
+  constructor(public http : HttpClient){}
+  check(){
+    this.http.post('https://localhost:7188/adminlogin');
+  }
 }
+
+
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
